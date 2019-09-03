@@ -5,7 +5,9 @@ context("Test the overall app", () => {
 
   describe("Desktop functionalities", () => {
     it("renders with text", () => {
-      cy.get(".app").should("have.text", "Hello World");
+      cy.get(".app").should("contain", "Width: ");
+      cy.get(".app").should("contain", "Height: ");
+      cy.get(".app").should("contain", "Aspect Ratio");
     });
   });
 });

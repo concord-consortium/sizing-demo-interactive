@@ -5,6 +5,8 @@ import { shallow } from "enzyme";
 describe("Text component", () => {
   it("renders provided text", () => {
     const wrapper = shallow(<Text text="Hello World"/>);
-    expect(wrapper.text()).toEqual("Hello World");
+    expect(wrapper.text()).toContain("Width:");
+    expect(wrapper.text()).toContain("Height:");
+    expect(wrapper.text()).toContain("Aspect Ratio");
   });
 });
