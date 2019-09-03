@@ -1,10 +1,10 @@
 {
-  "name": "starter-projects",
+  "name": "sizing-demo-interactive",
   "version": "0.0.1",
-  "description": "Concord Consortium starter projects",
+  "description": "Concord Consortium Sizing Demo Interactive",
   "main": "index.js",
   "jest": {
-    "testURL": "https://starter-projects.unexisting.url.com",
+    "testURL": "https://sizing-demo-interactive.unexisting.url.com",
     "setupFilesAfterEnv": [
       "<rootDir>src/setupTests.js"
     ],
@@ -54,14 +54,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/concord-consortium/starter-projects.git"
+    "url": "git+https://github.com/concord-consortium/sizing-demo-interactive.git"
   },
   "author": "Concord Consortium",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/concord-consortium/starter-projects/issues"
+    "url": "https://github.com/concord-consortium/sizing-demo-interactive/issues"
   },
-  "homepage": "https://github.com/concord-consortium/starter-projects#readme",
+  "homepage": "https://github.com/concord-consortium/sizing-demo-interactive#readme",
   "devDependencies": {
     "@cypress/webpack-preprocessor": "^3.0.1",
     "@types/enzyme": "^3.10.3",
