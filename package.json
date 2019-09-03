@@ -109,6 +109,7 @@
     "mobx-react": "^5.4.4",
     "mobx-state-tree": "^3.14.1",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "iframe-phone": "^1.2.0"
   }
 }
