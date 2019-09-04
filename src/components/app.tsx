@@ -34,7 +34,9 @@ export class AppComponent extends BaseComponent<IProps, IState> {
     const {ui} = this.stores;
     return (
       <div className="app">
+        <h2>Current Interactive Size</h2>
         <Text text={ui.sampleText} />
+        <h2>Dynamic Sizing</h2>
         <SetHeight onHeightRequest={this.requestHeight}/>
       </div>
     );
