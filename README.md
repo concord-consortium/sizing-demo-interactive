@@ -1,50 +1,12 @@
 # Sizing Demo Interactive
 
+This is an interactive used to demonstrate how LARA size interactives.  It is used in this LARA activity: https://authoring.concord.org/activities/9620
+
+## Missing Features
+
+It currently does not provide a way to send its preferred aspectRatio to LARA. Sending a preferred aspectRatio is something the CODAP interactive does.
+
 ## Development
-
-### Copying a starter project
-
-1. Create a new public repository for your project (e.g. `new-repository`)
-2. Create a clone of the starter repo
-    ```
-    git clone --single-branch https://github.com/concord-consortium/sizing-demo-interactive.git new-repository
-    ```
-3. Update the starter repo
-
-    First, update and run the starter project:
-    ```
-    cd new-repository
-    npm install
-    npm update
-    npm start
-    ``` 
-    Then, verify the project works by visiting [localhost:8080](http://localhost:8080) and checking for the words "Hello World". 
-    Also verify that the test suite still passes:
-    ```
-    npm run test:full
-    ```
-    If the updates are functional, please commit any changes to `package.json` or `package-lock.json` back to the 
-    Sizing Demo Interactive repository for future use.
-
-4. Next, re-initialize the repo to create a new history
-    ```
-    rm -rf .git
-    git init
-    ```
-5. Create an initial commit for your new project
-    ```
-    git add .
-    git commit -m "Initial commit"
-    ```
-6. Push to your new repository
-    ```
-    git remote add origin https://github.com/concord-consortium/new-repository.git
-    git push -u origin master
-    ```
-7. Open your new repository and update all instances of `sizing-demo-interactive` to `new-repository` and `Sizing Demo Interactive` to `New Repository`. 
-   Note: this will do some of the configuration for Travis deployment to S3, but you'll still need to follow 
-   the instructions [here](https://docs.google.com/document/d/e/2PACX-1vTpYjbGmUMxk_FswUmapK_RzVyEtm1WdnFcNByp9mqwHnp0nR_EzRUOiubuUCsGwzQgOnut_UiabYOM/pub).
-8. Your new repository is ready! Remove this section of the `README`, and follow the steps below to use it.
 
 ### Initial steps
 
@@ -65,30 +27,14 @@ You *do not* need to build to deploy the code, that is automatic.  See more info
 
 ## Deployment
 
-*TODO* Set up Travis Deployment
-
 Production releases to S3 are based on the contents of the /dist folder and are built automatically by Travis
-for each branch pushed to GitHub and each merge into production.
+for each branch pushed to GitHub and each merge into master.
 
-Merges into production are deployed to http://sizing-demo-interactive.concord.org.
+This interacitve is currently used internally so there is no production release process. Simply merge changes into master and they will be deployed to https://models-resources.concord.org/sizing-demo-interactive/index.html.
 
-Other branches are deployed to http://sizing-demo-interactive.concord.org/branch/<name>.
+Other branches are deployed to https://models-resources.concord.org/sizing-demo-interactive/branch/<name>/index.html.
 
-You can view the status of all the branch deploys [here](https://travis-ci.org/concord-consortium/sizing-demo-interactive/branches).
-
-To deploy a production release:
-
-1. Increment version number in package.json
-2. Create new entry in CHANGELOG.md
-3. Run `git log --pretty=oneline --reverse <last release tag>...HEAD | grep '#' | grep -v Merge` and add contents (after edits if needed to CHANGELOG.md)
-4. Run `npm run build`
-5. Copy asset size markdown table from previous release and change sizes to match new sizes in `dist`
-6. Create `release-<version>` branch and commit changes, push to GitHub, create PR and merge
-7. Checkout master and pull
-8. Checkout production
-9. Run `git merge master --no-ff`
-10. Push production to GitHub
-11. Use https://github.com/concord-consortium/sizing-demo-interactive/releases to create a new release tag
+You can view the status of all the branch deploys [here](https://travis-ci.com/concord-consortium/sizing-demo-interactive/branches).
 
 ### Testing
 
