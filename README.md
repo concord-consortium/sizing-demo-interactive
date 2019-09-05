@@ -1,6 +1,6 @@
 # Sizing Demo Interactive
 
-This is an interactive used to demonstrate how LARA size interactives.  It is used in this LARA activity: https://authoring.concord.org/activities/9620
+This is an interactive used to demonstrate how LARA sizes interactives.  It is used in this LARA activity: https://authoring.concord.org/activities/9620
 
 ## Missing Features
 
