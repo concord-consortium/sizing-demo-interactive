@@ -2,7 +2,7 @@ import { inject, observer } from "mobx-react";
 import * as React from "react";
 import { BaseComponent, IBaseProps } from "./base";
 import { Text } from "./text";
-import { SetHeight } from "./setHeight";
+import { SingleFieldSubmit } from "./singleFieldSubmit";
 import * as iframePhone from "iframe-phone";
 
 import "./app.sass";
@@ -22,6 +22,7 @@ export class AppComponent extends BaseComponent<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.requestHeight = this.requestHeight.bind(this);
+    this.requestAspectRatio = this.requestAspectRatio.bind(this);
 
     this.phone = iframePhone.getIFrameEndpoint();
     // window.phone = this.phone
@@ -37,7 +38,12 @@ export class AppComponent extends BaseComponent<IProps, IState> {
         <h2>Current Interactive Size</h2>
         <Text text={ui.sampleText} />
         <h2>Dynamic Sizing</h2>
-        <SetHeight onHeightRequest={this.requestHeight}/>
+        <SingleFieldSubmit
+          onSubmit={this.requestHeight}
+          label="Height" buttonText="Request Height"/>
+        <SingleFieldSubmit
+          onSubmit={this.requestAspectRatio}
+          label="Aspect Ratio" buttonText="Request Aspect Ratio"/>
       </div>
     );
   }
@@ -46,13 +52,23 @@ export class AppComponent extends BaseComponent<IProps, IState> {
     this.phone.post("height", height);
   }
 
+  private requestAspectRatio(aspectRatio: number) {
+    this.sendSupportedFeatures({aspectRatio})
+  }
+
   private initInteractive(data: any) {
-    this.phone.post("supportedFeatures", {
+    this.sendSupportedFeatures();
+  }
+
+  private sendSupportedFeatures({aspectRatio}: {aspectRatio?: number} = {}) {
+    const config = {
       apiVersion: 1,
       features: {
         authoredState: false,
-        interactiveState: false
+        interactiveState: false,
+        aspectRatio
       }
-    });
+    };
+    this.phone.post("supportedFeatures", config);
   }
 }
