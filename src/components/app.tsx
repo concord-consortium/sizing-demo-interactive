@@ -53,7 +53,7 @@ export class AppComponent extends BaseComponent<IProps, IState> {
   }
 
   private requestAspectRatio(aspectRatio: number) {
-    this.sendSupportedFeatures({aspectRatio})
+    this.sendSupportedFeatures({aspectRatio});
   }
 
   private initInteractive(data: any) {
