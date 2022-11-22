@@ -80,7 +80,7 @@
     "enzyme-adapter-react-16": "^1.14.0",
     "file-loader": "^2.0.0",
     "fork-ts-checker-webpack-plugin": "^0.4.15",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
     "mini-css-extract-plugin": "^0.4.5",
@@ -101,7 +101,7 @@
     "url-loader": "^1.1.2",
     "wait-on": "^3.3.0",
     "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.7",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
